@@ -1,4 +1,8 @@
+#EasyBank Backend
+-Model
+    --Customer
 -Controller
+    --UserController
     --Account
     --Balance
     --Card
@@ -6,3 +10,47 @@
     --Loans
     --Notices
 -Service
+    --EasyBankUserDetailsService
+-Repository
+    --CustomerRepository
+-Config
+    --ProjectSecurityConfig
+    --EasyBankAuthenticationConfig
+-Exception
+    --CustomBasicException
+
+
+#EasyBank Frontend
+-Component
+    --Account
+    --Balance
+    --Card
+    --Contact
+    --Dashboard
+    --Footer
+    --Header
+    --Home
+    --Loans
+    --Login
+    --Logout
+    --Notices
+    --Register
+--Model
+    --Account
+    --Account Transaction
+    --Card
+    --Contact
+    --Loans
+    --User
+-Constants
+    --AppConstants
+-Service
+  -Dashboard
+    --DashboardService
+  -Login
+    --LoginService
+  -Register
+    --RegisterService
+-RouteGuard
+-Interceptor
+-appRoutingModule
