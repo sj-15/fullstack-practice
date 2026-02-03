@@ -40,7 +40,7 @@ public class UserController {
 
     @RequestMapping("/user")
     public Customer getUserDetailsAfterLogin(Authentication authentication) {
-        System.out.println(authentication.getDetails());
+//        System.out.println(authentication.getDetails());
         Optional<Customer> opCustomer = customerRepository.findByEmail(authentication.getName());
         return opCustomer.orElse(null);
     }

@@ -1,6 +1,6 @@
 export const AppConstant = {
   CONTACT_API_URL: "/contact",
-  LOGIN_API_URL: "/login",
+  LOGIN_API_URL: "/user",
   REGISTER_API_URL: "/register",
   BALANCE_API_URL: "/myBalance",
   ACCOUNT_API_URL: "/myAccount",

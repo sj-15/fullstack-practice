@@ -26,13 +26,8 @@ export default function Register() {
       });
 
       let user = new User(...response.data);
-      console.log(response.data);
       user.authStatus = "AUTH";
-
       localStorage.setItem("token", response.data.token);
-      sessionStorage.setItem("userDetails", user);
-      const csrfToken = getCookie("X-XSRF-TOKEN");
-      console.log(csrfToken);
       navigate("/");
     } catch (error) {
       console.log("Registration failed", error);
@@ -40,91 +35,93 @@ export default function Register() {
   };
 
   return (
-    <div className="register">
-      <form className="register-form" onSubmit={handleRegister}>
-        <span className="register-form-title">Create an account</span>
+    <div className="container">
+      <div className="register">
+        <form className="register-form" onSubmit={handleRegister}>
+          <span className="register-form-title">Create an account</span>
 
-        {/* Name */}
-        <div className="form-group">
-          <div className="wrap-input" data-validate="Please enter your name">
-            <input
-              className="input-field"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+          {/* Name */}
+          <div className="form-group">
+            <div className="wrap-input" data-validate="Please enter your name">
+              <input
+                className="input-field"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            {/* TODO: NAME NOT NULL EXCEPTION */}
           </div>
-          {/* TODO: NAME NOT NULL EXCEPTION */}
-        </div>
 
-        {/* Email */}
-        <div className="form-group">
-          <div className="wrap-input" data-validate="Please enter email">
-            <input
-              className="input-field"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+          {/* Email */}
+          <div className="form-group">
+            <div className="wrap-input" data-validate="Please enter email">
+              <input
+                className="input-field"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            {/* TODO: IMPLEMENT EMAIL VALIDATION */}
           </div>
-          {/* TODO: IMPLEMENT EMAIL VALIDATION */}
-        </div>
 
-        {/* Mobile No */}
-        <div className="form-group">
-          <div
-            className="wrap-input"
-            data-validate="Please enter your mobile no"
-          >
-            <input
-              className="input-field"
-              type="number"
-              name="mobileNo"
-              id="mobileNo"
-              placeholder="Mobile No"
-              value={mobileNo}
-              onChange={(e) => setMobileNo(e.target.value)}
-              required
-            />
+          {/* Mobile No */}
+          <div className="form-group">
+            <div
+              className="wrap-input"
+              data-validate="Please enter your mobile no"
+            >
+              <input
+                className="input-field"
+                type="number"
+                name="mobileNo"
+                id="mobileNo"
+                placeholder="Mobile No"
+                value={mobileNo}
+                onChange={(e) => setMobileNo(e.target.value)}
+                required
+              />
+            </div>
+            {/* TODO: MOBILE NO VALIDATION*/}
           </div>
-          {/* TODO: MOBILE NO VALIDATION*/}
-        </div>
 
-        {/* Password */}
-        <div className="form-group">
-          <div
-            className="wrap-input"
-            data-validate="Please enter your password"
-          >
-            <input
-              className="input-field"
-              type="password"
-              name="pwd"
-              id="pwd"
-              placeholder="Password"
-              value={pwd}
-              onChange={(e) => setPwd(e.target.value)}
-              required
-            />
+          {/* Password */}
+          <div className="form-group">
+            <div
+              className="wrap-input"
+              data-validate="Please enter your password"
+            >
+              <input
+                className="input-field"
+                type="password"
+                name="pwd"
+                id="pwd"
+                placeholder="Password"
+                value={pwd}
+                onChange={(e) => setPwd(e.target.value)}
+                required
+              />
+            </div>
+            {/* TODO: PASSWORD VALIDATION*/}
           </div>
-          {/* TODO: PASSWORD VALIDATION*/}
-        </div>
 
-        {/* Submit button */}
-        <div className="container-register-btn">
-          <button className="register-btn" type="submit">
-            Sign up
-          </button>
-        </div>
-      </form>
+          {/* Submit button */}
+          <div className="container-register-btn">
+            <button className="register-btn" type="submit">
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

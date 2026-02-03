@@ -31,5 +31,5 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     @JsonIgnore
-    private Set<Authority> authorities;
+    private Set<Authority> authorities>
 }
